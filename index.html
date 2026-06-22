@@ -1,16 +1,19 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta name="slides-format" content="viewport" />
   <title>Licencias Granada - Presentación del proyecto. Jose Carlos Martin.</title>
-  
+
   <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700;800&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet">
-  
+  <link
+    href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700;800&family=Instrument+Serif:ital@0;1&display=swap"
+    rel="stylesheet">
+
   <!-- Tailwind CSS -->
   <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
   <style type="text/tailwindcss">
@@ -30,225 +33,276 @@
   <!-- Custom CSS -->
   <link rel="stylesheet" href="css/styles.css">
 </head>
+
 <body>
-<div class="mouse-spotlight" style="position:fixed;inset:0;z-index:99;pointer-events:none;"></div>
-<div class="deck">
+  <div class="mouse-spotlight" style="position:fixed;inset:0;z-index:99;pointer-events:none;"></div>
+  <div class="deck">
 
-  <!-- DIAPOSITVA 1: Motivación y Diseños -->
-  <div class="slide active" data-slide="1">
-    <div class="gradient-mesh">
-      <div class="blob" style="width:460px;height:460px;top:-120px;right:-80px;background:var(--color-accent-1);opacity:.15"></div>
-      <div class="blob" style="width:320px;height:320px;bottom:-80px;left:-60px;background:var(--color-accent-2);opacity:.12"></div>
-      <div class="blob" style="width:220px;height:220px;top:45%;left:15%;background:var(--color-accent-3);opacity:.11"></div>
-    </div>
-    <canvas class="particle-canvas" style="position:absolute;inset:0;z-index:1"></canvas>
-    <div class="content flex flex-col h-full justify-center">
-      <div class="text-center mb-6 mt-4">
-        <img src="logo.png" alt="Logo Licencias Granada" class="reveal mx-auto mb-4 h-20 object-contain" />
-        <div class="reveal mini-pill inline-block" style="background:rgba(15,108,189,.1);color:#0f6cbd">Proyecto social digital Summer of Code</div>
-        <h1 class="reveal font-display tracking-tight text-[clamp(2.8rem,5vw,4.5rem)] leading-[1] mt-3">Licencias Granada</h1>
-        <p class="reveal text-[clamp(1rem,1.5vw,1.15rem)] text-text-secondary mt-3 max-w-[42rem] mx-auto">Aplicación web para ayudar al contribuyente a entender qué licencias necesita y cómo seguir el trámite oficial.</p>
+    <!-- DIAPOSITVA 1: Motivación y Diseños -->
+    <div class="slide active" data-slide="1">
+      <div class="gradient-mesh">
+        <div class="blob"
+          style="width:460px;height:460px;top:-120px;right:-80px;background:var(--color-accent-1);opacity:.15"></div>
+        <div class="blob"
+          style="width:320px;height:320px;bottom:-80px;left:-60px;background:var(--color-accent-2);opacity:.12"></div>
+        <div class="blob"
+          style="width:220px;height:220px;top:45%;left:15%;background:var(--color-accent-3);opacity:.11"></div>
       </div>
-      
-      <!-- Grid de Flip Cards para Slide 1 -->
-      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5 mt-4 max-w-[1200px] mx-auto w-full lg:h-[340px]">
-        <!-- Card 1: Motivo -->
-        <div class="reveal flip-card" onclick="this.classList.toggle('flipped')">
-          <div class="flip-card-inner">
-            <div class="flip-card-front soft-card p-6 flex flex-col items-center justify-center text-center">
-              <div class="mini-pill mb-4" style="background:#e8f1fb;color:#0f6cbd">Concepto</div>
-              <h3 class="font-bold text-xl">Motivo y Problema</h3>
-              <p class="text-sm text-text-secondary mt-3">Haz clic para girar y leer el valor social</p>
-            </div>
-            <div class="flip-card-back flex flex-col justify-center">
-              <div class="text-xs text-text-muted uppercase tracking-[0.12em] mb-2 font-bold">Problema y Valor Social</div>
-              <p class="text-sm text-text-secondary">La idea nace porque la información municipal está muy repartida. El ciudadano duda si el trámite es online o presencial y qué documentos necesita.</p>
-              <p class="text-sm text-text-secondary mt-3">El fin social es reducir dudas y acercar la administración con un lenguaje más claro, guiando hacia la ventanilla correcta.</p>
-            </div>
-          </div>
-        </div>
-        
-        <!-- Card 2: Diseño Inicio -->
-        <div class="reveal flip-card" style="transition-delay: 0.1s" onclick="this.classList.toggle('flipped')">
-          <div class="flip-card-inner">
-            <div class="flip-card-front mock-window p-5 flex flex-col">
-              <div class="flex items-center gap-2 mb-3"><span class="w-2 h-2 rounded-full bg-red-300"></span><span class="w-2 h-2 rounded-full bg-yellow-300"></span><span class="w-2 h-2 rounded-full bg-green-300"></span></div>
-              <div class="font-bold text-sm mb-2">Diseño: Inicio</div>
-              <div class="ui-box p-3 bg-[#f9fbfe] flex-1 flex flex-col justify-center items-center">
-                <div class="w-full h-8 rounded bg-white border border-gray-100 mb-2"></div>
-                <div class="flex gap-2 w-full"><div class="h-10 flex-1 bg-white border border-gray-100 rounded"></div><div class="h-10 flex-1 bg-white border border-gray-100 rounded"></div></div>
-              </div>
-              <p class="text-xs text-center text-text-muted mt-3">Haz clic para detalles</p>
-            </div>
-            <div class="flip-card-back flex flex-col justify-center">
-              <div class="text-xs text-text-muted uppercase tracking-[0.12em] mb-2 font-bold">Puerta de entrada</div>
-              <p class="text-sm text-text-secondary">La home permite buscar y distinguir licencias frecuentes desde el primer vistazo.</p>
-              <ul class="mt-3 text-sm text-text-secondary list-disc pl-4 space-y-1">
-                <li>Acceso rápido a trámites.</li>
-                <li>Lenguaje sencillo.</li>
-                <li>Confianza institucional sin parecer la sede oficial.</li>
-              </ul>
-            </div>
-          </div>
+      <canvas class="particle-canvas" style="position:absolute;inset:0;z-index:1"></canvas>
+      <div class="content flex flex-col h-full justify-center">
+        <div class="text-center mb-6 mt-4">
+          <img src="logo.png" alt="Logo Licencias Granada" class="reveal mx-auto mb-4 h-20 object-contain" />
+          <div class="reveal mini-pill inline-block" style="background:rgba(15,108,189,.1);color:#0f6cbd">Proyecto
+            social digital Summer of Code</div>
+          <h1 class="reveal font-display tracking-tight text-[clamp(2.8rem,5vw,4.5rem)] leading-[1] mt-3">Licencias
+            Granada</h1>
+          <p class="reveal text-[clamp(1rem,1.5vw,1.15rem)] text-text-secondary mt-3 max-w-[42rem] mx-auto">Aplicación
+            web para ayudar al contribuyente a entender qué licencias necesita y cómo seguir el trámite oficial.</p>
         </div>
 
-        <!-- Card 3: Diseño Catálogo -->
-        <div class="reveal flip-card" style="transition-delay: 0.2s" onclick="this.classList.toggle('flipped')">
-          <div class="flip-card-inner">
-            <div class="flip-card-front mock-window p-5 flex flex-col">
-              <div class="flex items-center gap-2 mb-3"><span class="w-2 h-2 rounded-full bg-red-300"></span><span class="w-2 h-2 rounded-full bg-yellow-300"></span><span class="w-2 h-2 rounded-full bg-green-300"></span></div>
-              <div class="font-bold text-sm mb-2">Diseño: Catálogo</div>
-              <div class="flex-1 flex gap-2">
-                <div class="w-1/3 bg-[#f9fbfe] border border-gray-100 rounded p-2 flex flex-col gap-1"><div class="h-2 bg-gray-200 rounded w-full"></div><div class="h-2 bg-gray-200 rounded w-3/4"></div></div>
-                <div class="w-2/3 bg-white border border-gray-100 rounded p-2 flex flex-col gap-2">
-                  <div class="h-3 bg-gray-200 rounded w-1/2"></div><div class="h-2 bg-gray-100 rounded w-full"></div><div class="h-2 bg-gray-100 rounded w-full"></div><div class="mt-auto h-6 bg-[#0f6cbd] rounded w-full"></div>
+        <!-- Grid de Flip Cards para Slide 1 -->
+        <div
+          class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5 mt-4 max-w-[1200px] mx-auto w-full lg:h-[340px]">
+          <!-- Card 1: Motivo -->
+          <div class="reveal flip-card" onclick="this.classList.toggle('flipped')">
+            <div class="flip-card-inner">
+              <div class="flip-card-front soft-card p-6 flex flex-col items-center justify-center text-center">
+                <div class="mini-pill mb-4" style="background:#e8f1fb;color:#0f6cbd">Concepto</div>
+                <h3 class="font-bold text-xl">Motivo y Problema</h3>
+                <p class="text-sm text-text-secondary mt-3">Haz clic para girar y leer el valor social</p>
+              </div>
+              <div class="flip-card-back flex flex-col justify-center">
+                <div class="text-xs text-text-muted uppercase tracking-[0.12em] mb-2 font-bold">Problema y Valor Social
                 </div>
+                <p class="text-sm text-text-secondary">La idea nace porque la información municipal está muy repartida.
+                  El ciudadano duda si el trámite es online o presencial y qué documentos necesita.</p>
+                <p class="text-sm text-text-secondary mt-3">El fin social es reducir dudas y acercar la administración
+                  con un lenguaje más claro, guiando hacia la ventanilla correcta.</p>
               </div>
-              <p class="text-xs text-center text-text-muted mt-3">Haz clic para detalles</p>
-            </div>
-            <div class="flip-card-back flex flex-col justify-center">
-              <div class="text-xs text-text-muted uppercase tracking-[0.12em] mb-2 font-bold">Fichas de licencia</div>
-              <p class="text-sm text-text-secondary">Permite ver en una sola pantalla qué presentar, modelo normalizado, tasas y a qué fuente oficial acudir.</p>
-              <p class="text-sm text-text-secondary mt-3">Se apoya en patrones de servicios públicos: tarjetas, tablas simples y botones claros.</p>
             </div>
           </div>
-        </div>
 
-        <!-- Card 4: Diseño Comparador -->
-        <div class="reveal flip-card" style="transition-delay: 0.3s" onclick="this.classList.toggle('flipped')">
-          <div class="flip-card-inner">
-            <div class="flip-card-front soft-card p-6 flex flex-col items-center justify-center text-center">
-              <div class="mini-pill mb-4" style="background:#fff6df;color:#9a6a00">Flujos avanzados</div>
-              <h3 class="font-bold text-xl">Comparador y Novedades</h3>
-              <p class="text-sm text-text-secondary mt-3">Haz clic para girar y leer funcionalidades</p>
+          <!-- Card 2: Diseño Inicio -->
+          <div class="reveal flip-card" style="transition-delay: 0.1s" onclick="this.classList.toggle('flipped')">
+            <div class="flip-card-inner">
+              <div class="flip-card-front mock-window p-5 flex flex-col">
+                <div class="flex items-center gap-2 mb-3"><span class="w-2 h-2 rounded-full bg-red-300"></span><span
+                    class="w-2 h-2 rounded-full bg-yellow-300"></span><span
+                    class="w-2 h-2 rounded-full bg-green-300"></span></div>
+                <div class="font-bold text-sm mb-2">Diseño: Inicio</div>
+                <div class="ui-box p-3 bg-[#f9fbfe] flex-1 flex flex-col justify-center items-center">
+                  <div class="w-full h-8 rounded bg-white border border-gray-100 mb-2"></div>
+                  <div class="flex gap-2 w-full">
+                    <div class="h-10 flex-1 bg-white border border-gray-100 rounded"></div>
+                    <div class="h-10 flex-1 bg-white border border-gray-100 rounded"></div>
+                  </div>
+                </div>
+                <p class="text-xs text-center text-text-muted mt-3">Haz clic para detalles</p>
+              </div>
+              <div class="flip-card-back flex flex-col justify-center">
+                <div class="text-xs text-text-muted uppercase tracking-[0.12em] mb-2 font-bold">Puerta de entrada</div>
+                <p class="text-sm text-text-secondary">La home permite buscar y distinguir licencias frecuentes desde el
+                  primer vistazo.</p>
+                <ul class="mt-3 text-sm text-text-secondary list-disc pl-4 space-y-1">
+                  <li>Acceso rápido a trámites.</li>
+                  <li>Lenguaje sencillo.</li>
+                  <li>Confianza institucional sin parecer la sede oficial.</li>
+                </ul>
+              </div>
             </div>
-            <div class="flip-card-back flex flex-col justify-center">
-              <div class="text-xs text-text-muted uppercase tracking-[0.12em] mb-2 font-bold">Herramientas extra</div>
-              <p class="text-sm text-text-secondary"><strong>Comparador:</strong> Enfrenta licencias (ej. obra menor vs mayor) para que el ciudadano decida fácilmente su trámite correcto.</p>
-              <p class="text-sm text-text-secondary mt-3"><strong>Actualizaciones:</strong> Muestra qué requisitos han cambiado recientemente y cuándo se revisaron internamente.</p>
+          </div>
+
+          <!-- Card 3: Diseño Catálogo -->
+          <div class="reveal flip-card" style="transition-delay: 0.2s" onclick="this.classList.toggle('flipped')">
+            <div class="flip-card-inner">
+              <div class="flip-card-front mock-window p-5 flex flex-col">
+                <div class="flex items-center gap-2 mb-3"><span class="w-2 h-2 rounded-full bg-red-300"></span><span
+                    class="w-2 h-2 rounded-full bg-yellow-300"></span><span
+                    class="w-2 h-2 rounded-full bg-green-300"></span></div>
+                <div class="font-bold text-sm mb-2">Diseño: Catálogo</div>
+                <div class="flex-1 flex gap-2">
+                  <div class="w-1/3 bg-[#f9fbfe] border border-gray-100 rounded p-2 flex flex-col gap-1">
+                    <div class="h-2 bg-gray-200 rounded w-full"></div>
+                    <div class="h-2 bg-gray-200 rounded w-3/4"></div>
+                  </div>
+                  <div class="w-2/3 bg-white border border-gray-100 rounded p-2 flex flex-col gap-2">
+                    <div class="h-3 bg-gray-200 rounded w-1/2"></div>
+                    <div class="h-2 bg-gray-100 rounded w-full"></div>
+                    <div class="h-2 bg-gray-100 rounded w-full"></div>
+                    <div class="mt-auto h-6 bg-[#0f6cbd] rounded w-full"></div>
+                  </div>
+                </div>
+                <p class="text-xs text-center text-text-muted mt-3">Haz clic para detalles</p>
+              </div>
+              <div class="flip-card-back flex flex-col justify-center">
+                <div class="text-xs text-text-muted uppercase tracking-[0.12em] mb-2 font-bold">Fichas de licencia</div>
+                <p class="text-sm text-text-secondary">Permite ver en una sola pantalla qué presentar, modelo
+                  normalizado, tasas y a qué fuente oficial acudir.</p>
+                <p class="text-sm text-text-secondary mt-3">Se apoya en patrones de servicios públicos: tarjetas, tablas
+                  simples y botones claros.</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Card 4: Diseño Comparador -->
+          <div class="reveal flip-card" style="transition-delay: 0.3s" onclick="this.classList.toggle('flipped')">
+            <div class="flip-card-inner">
+              <div class="flip-card-front soft-card p-6 flex flex-col items-center justify-center text-center">
+                <div class="mini-pill mb-4" style="background:#fff6df;color:#9a6a00">Flujos avanzados</div>
+                <h3 class="font-bold text-xl">Comparador y Novedades</h3>
+                <p class="text-sm text-text-secondary mt-3">Haz clic para girar y leer funcionalidades</p>
+              </div>
+              <div class="flip-card-back flex flex-col justify-center">
+                <div class="text-xs text-text-muted uppercase tracking-[0.12em] mb-2 font-bold">Herramientas extra</div>
+                <p class="text-sm text-text-secondary"><strong>Comparador:</strong> Enfrenta licencias (ej. obra menor
+                  vs mayor) para que el ciudadano decida fácilmente su trámite correcto.</p>
+                <p class="text-sm text-text-secondary mt-3"><strong>Actualizaciones:</strong> Muestra qué requisitos han
+                  cambiado recientemente y cuándo se revisaron internamente.</p>
+              </div>
             </div>
           </div>
         </div>
       </div>
     </div>
+
+    <!-- Slide 2: Stack Técnico y Compromisos -->
+    <div class="slide section-dark" data-slide="2">
+      <div class="gradient-mesh">
+        <div class="blob" style="width:420px;height:420px;top:-120px;right:-80px;background:#0f6cbd;opacity:.14"></div>
+        <div class="blob" style="width:300px;height:300px;bottom:-80px;left:-60px;background:#2f9e8f;opacity:.12"></div>
+        <div class="blob" style="width:210px;height:210px;top:44%;left:20%;background:#d6a61f;opacity:.08"></div>
+      </div>
+      <canvas class="particle-canvas-ambient" style="position:absolute;inset:0;z-index:1"></canvas>
+      <div class="content flex flex-col h-full justify-center">
+        <div class="text-center mb-6 mt-8">
+          <div class="reveal mini-pill inline-block" style="background:rgba(255,255,255,.12);color:#fff">Desarrollo y
+            Legal</div>
+          <h2 class="reveal font-display text-[clamp(2.5rem,4vw,3.8rem)] mt-3">Stack y Compromisos Summer of Code</h2>
+          <p class="reveal text-[1.05rem] text-white/78 max-w-[50rem] mx-auto mt-2">Tecnología de vanguardia y
+            cumplimiento estricto de todas las bases y compromisos del concurso.</p>
+        </div>
+
+        <!-- Grid de Flip Cards para Slide 2 -->
+        <div
+          class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5 mt-4 max-w-[1000px] mx-auto w-full lg:h-[380px]">
+
+          <!-- Card 1: Angular & Spring -->
+          <div class="reveal flip-card" onclick="this.classList.toggle('flipped')">
+            <div class="flip-card-inner">
+              <div
+                class="flip-card-front bg-white/5 border border-white/10 rounded-[24px] p-6 flex flex-col items-center justify-center text-center backdrop-blur-md">
+                <div class="text-3xl mb-3 opacity-90">🏗️</div>
+                <h3 class="font-bold text-lg text-white">Angular & Spring Boot</h3>
+                <p class="text-xs text-white/60 mt-3">Clic para ver arquitectura</p>
+              </div>
+              <div class="flip-card-back flex flex-col justify-center">
+                <p class="text-sm"><strong>Angular:</strong> Frontend para construir una interfaz modular con
+                  componentes reutilizables y navegación fluida.</p>
+                <p class="text-sm mt-3"><strong>Spring Boot:</strong> Backend robusto para exponer API REST, organizar
+                  reglas de negocio y administrar las fuentes de datos.</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Card 2: DB & Docker -->
+          <div class="reveal flip-card" style="transition-delay: 0.1s" onclick="this.classList.toggle('flipped')">
+            <div class="flip-card-inner">
+              <div
+                class="flip-card-front bg-white/5 border border-white/10 rounded-[24px] p-6 flex flex-col items-center justify-center text-center backdrop-blur-md">
+                <div class="text-3xl mb-3 opacity-90">🐳</div>
+                <h3 class="font-bold text-lg text-white">PostgreSQL & Docker</h3>
+                <p class="text-xs text-white/60 mt-3">Clic para ver infraestructura</p>
+              </div>
+              <div class="flip-card-back flex flex-col justify-center">
+                <p class="text-sm"><strong>PostgreSQL / MySQL:</strong> Base de datos relacional para gestionar tipos de
+                  licencias, requisitos y el registro de cambios.</p>
+                <p class="text-sm mt-3"><strong>Docker:</strong> Contenerización completa para asegurar un despliegue
+                  ágil, sencillo y un entorno homogéneo.</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Card 3: Fuentes -->
+          <div class="reveal flip-card" style="transition-delay: 0.2s" onclick="this.classList.toggle('flipped')">
+            <div class="flip-card-inner">
+              <div
+                class="flip-card-front bg-white/5 border border-white/10 rounded-[24px] p-6 flex flex-col items-center justify-center text-center backdrop-blur-md">
+                <div class="text-3xl mb-3 opacity-90">🏛️</div>
+                <h3 class="font-bold text-lg text-white">Fuentes Oficiales</h3>
+                <p class="text-xs text-white/60 mt-3">Clic para ver alcance</p>
+              </div>
+              <div class="flip-card-back flex flex-col justify-center">
+                <p class="text-sm"><strong>Datos reales:</strong> La app se alimenta de la sede electrónica, gestión
+                  unificada y páginas de orientación municipal.</p>
+                <p class="text-sm mt-3"><strong>Objetivo final:</strong> Facilitar al ciudadano la preparación
+                  exhaustiva antes de derivarlo al trámite de la ventanilla oficial.</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Card 4: MIT y Código -->
+          <div class="reveal flip-card" style="transition-delay: 0.3s" onclick="this.classList.toggle('flipped')">
+            <div class="flip-card-inner">
+              <div
+                class="flip-card-front bg-white/5 border border-white/10 rounded-[24px] p-6 flex flex-col items-center justify-center text-center backdrop-blur-md">
+                <div class="text-3xl mb-3 opacity-90">📜</div>
+                <h3 class="font-bold text-lg text-white">Código Libre e Inglés</h3>
+                <p class="text-xs text-white/60 mt-3">Clic para ver bases</p>
+              </div>
+              <div class="flip-card-back flex flex-col justify-center">
+                <p class="text-sm"><strong>Open Source:</strong> El proyecto final será liberado y publicado
+                  íntegramente como código abierto bajo la <strong>licencia MIT</strong> en GitHub.</p>
+                <p class="text-sm mt-3"><strong>Inglés técnico:</strong> Todo el código fuente, comentarios y
+                  documentación técnica estarán redactados en inglés.</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Card 5: Ayuda App -->
+          <div class="reveal flip-card" style="transition-delay: 0.4s" onclick="this.classList.toggle('flipped')">
+            <div class="flip-card-inner">
+              <div
+                class="flip-card-front bg-white/5 border border-white/10 rounded-[24px] p-6 flex flex-col items-center justify-center text-center backdrop-blur-md">
+                <div class="text-3xl mb-3 opacity-90">💡</div>
+                <h3 class="font-bold text-lg text-white">¿En qué ayudaría esta app?</h3>
+                <p class="text-xs text-white/60 mt-3">Clic para ver la solución</p>
+              </div>
+              <div class="flip-card-back flex flex-col justify-center">
+                <p class="text-sm">Nace de la <strong>necesidad real del ciudadano</strong> frente a los problemas que
+                  encuentra al intentar conseguir una licencia municipal.</p>
+                <p class="text-sm mt-3">Facilitamos todo el proceso proporcionándole <strong>exactamente lo que
+                    necesita</strong> (documentos, modelos, pasos directos) para conseguirla sin confusiones ni pérdidas
+                  de tiempo.</p>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+
   </div>
 
-  <!-- Slide 2: Stack Técnico y Compromisos -->
-  <div class="slide section-dark" data-slide="2">
-    <div class="gradient-mesh">
-      <div class="blob" style="width:420px;height:420px;top:-120px;right:-80px;background:#0f6cbd;opacity:.14"></div>
-      <div class="blob" style="width:300px;height:300px;bottom:-80px;left:-60px;background:#2f9e8f;opacity:.12"></div>
-      <div class="blob" style="width:210px;height:210px;top:44%;left:20%;background:#d6a61f;opacity:.08"></div>
-    </div>
-    <canvas class="particle-canvas-ambient" style="position:absolute;inset:0;z-index:1"></canvas>
-    <div class="content flex flex-col h-full justify-center">
-      <div class="text-center mb-6 mt-8">
-        <div class="reveal mini-pill inline-block" style="background:rgba(255,255,255,.12);color:#fff">Desarrollo y Legal</div>
-        <h2 class="reveal font-display text-[clamp(2.5rem,4vw,3.8rem)] mt-3">Stack y Compromisos Summer of Code</h2>
-        <p class="reveal text-[1.05rem] text-white/78 max-w-[50rem] mx-auto mt-2">Tecnología de vanguardia y cumplimiento estricto de todas las bases y compromisos del concurso.</p>
-      </div>
-      
-      <!-- Grid de Flip Cards para Slide 2 -->
-      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5 mt-4 max-w-[1000px] mx-auto w-full lg:h-[380px]">
-        
-        <!-- Card 1: Angular & Spring -->
-        <div class="reveal flip-card" onclick="this.classList.toggle('flipped')">
-          <div class="flip-card-inner">
-            <div class="flip-card-front bg-white/5 border border-white/10 rounded-[24px] p-6 flex flex-col items-center justify-center text-center backdrop-blur-md">
-              <div class="text-3xl mb-3 opacity-90">🏗️</div>
-              <h3 class="font-bold text-lg text-white">Angular & Spring Boot</h3>
-              <p class="text-xs text-white/60 mt-3">Clic para ver arquitectura</p>
-            </div>
-            <div class="flip-card-back flex flex-col justify-center">
-              <p class="text-sm"><strong>Angular:</strong> Frontend para construir una interfaz modular con componentes reutilizables y navegación fluida.</p>
-              <p class="text-sm mt-3"><strong>Spring Boot:</strong> Backend robusto para exponer API REST, organizar reglas de negocio y administrar las fuentes de datos.</p>
-            </div>
-          </div>
-        </div>
-        
-        <!-- Card 2: DB & Docker -->
-        <div class="reveal flip-card" style="transition-delay: 0.1s" onclick="this.classList.toggle('flipped')">
-          <div class="flip-card-inner">
-            <div class="flip-card-front bg-white/5 border border-white/10 rounded-[24px] p-6 flex flex-col items-center justify-center text-center backdrop-blur-md">
-              <div class="text-3xl mb-3 opacity-90">🐳</div>
-              <h3 class="font-bold text-lg text-white">PostgreSQL & Docker</h3>
-              <p class="text-xs text-white/60 mt-3">Clic para ver infraestructura</p>
-            </div>
-            <div class="flip-card-back flex flex-col justify-center">
-              <p class="text-sm"><strong>PostgreSQL / MySQL:</strong> Base de datos relacional para gestionar tipos de licencias, requisitos y el registro de cambios.</p>
-              <p class="text-sm mt-3"><strong>Docker:</strong> Contenerización completa para asegurar un despliegue ágil, sencillo y un entorno homogéneo.</p>
-            </div>
-          </div>
-        </div>
-
-        <!-- Card 3: Fuentes -->
-        <div class="reveal flip-card" style="transition-delay: 0.2s" onclick="this.classList.toggle('flipped')">
-          <div class="flip-card-inner">
-            <div class="flip-card-front bg-white/5 border border-white/10 rounded-[24px] p-6 flex flex-col items-center justify-center text-center backdrop-blur-md">
-              <div class="text-3xl mb-3 opacity-90">🏛️</div>
-              <h3 class="font-bold text-lg text-white">Fuentes Oficiales</h3>
-              <p class="text-xs text-white/60 mt-3">Clic para ver alcance</p>
-            </div>
-            <div class="flip-card-back flex flex-col justify-center">
-              <p class="text-sm"><strong>Datos reales:</strong> La app se alimenta de la sede electrónica, gestión unificada y páginas de orientación municipal.</p>
-              <p class="text-sm mt-3"><strong>Objetivo final:</strong> Facilitar al ciudadano la preparación exhaustiva antes de derivarlo al trámite de la ventanilla oficial.</p>
-            </div>
-          </div>
-        </div>
-
-        <!-- Card 4: MIT y Código -->
-        <div class="reveal flip-card" style="transition-delay: 0.3s" onclick="this.classList.toggle('flipped')">
-          <div class="flip-card-inner">
-            <div class="flip-card-front bg-white/5 border border-white/10 rounded-[24px] p-6 flex flex-col items-center justify-center text-center backdrop-blur-md">
-              <div class="text-3xl mb-3 opacity-90">📜</div>
-              <h3 class="font-bold text-lg text-white">Código Libre e Inglés</h3>
-              <p class="text-xs text-white/60 mt-3">Clic para ver bases</p>
-            </div>
-            <div class="flip-card-back flex flex-col justify-center">
-              <p class="text-sm"><strong>Open Source:</strong> El proyecto final será liberado y publicado íntegramente como código abierto bajo la <strong>licencia MIT</strong> en GitHub.</p>
-              <p class="text-sm mt-3"><strong>Inglés técnico:</strong> Todo el código fuente, comentarios y documentación técnica estarán redactados en inglés.</p>
-            </div>
-          </div>
-        </div>
-
-        <!-- Card 5: Ayuda App -->
-        <div class="reveal flip-card" style="transition-delay: 0.4s" onclick="this.classList.toggle('flipped')">
-          <div class="flip-card-inner">
-            <div class="flip-card-front bg-white/5 border border-white/10 rounded-[24px] p-6 flex flex-col items-center justify-center text-center backdrop-blur-md">
-              <div class="text-3xl mb-3 opacity-90">💡</div>
-              <h3 class="font-bold text-lg text-white">¿En qué ayudaría esta app?</h3>
-              <p class="text-xs text-white/60 mt-3">Clic para ver la solución</p>
-            </div>
-            <div class="flip-card-back flex flex-col justify-center">
-              <p class="text-sm">Nace de la <strong>necesidad real del ciudadano</strong> frente a los problemas que encuentra al intentar conseguir una licencia municipal.</p>
-              <p class="text-sm mt-3">Facilitamos todo el proceso proporcionándole <strong>exactamente lo que necesita</strong> (documentos, modelos, pasos directos) para conseguirla sin confusiones ni pérdidas de tiempo.</p>
-            </div>
-          </div>
-        </div>
-
-      </div>
-    </div>
+  <!-- Footer Requerido -->
+  <div
+    class="fixed bottom-6 left-6 z-[100] text-[0.85rem] text-[#475b74] bg-white/80 backdrop-blur-md px-[22px] py-[10px] rounded-[40px] border border-[rgba(16,35,60,0.08)] shadow-[0_12px_30px_rgba(15,40,80,0.08)] hidden md:block">
+    Esta carta de presentacion ha sido creada por Jose Carlos Martin
+  </div>
+  <div
+    class="fixed top-0 left-0 right-0 text-center z-[100] text-[0.75rem] text-[#475b74] bg-white/90 backdrop-blur-md py-2 md:hidden border-b border-[rgba(16,35,60,0.08)]">
+    Esta carta de presentacion ha sido creada por Jose Carlos Martin
   </div>
 
-</div>
+  <!-- Navigation Controls -->
+  <div class="nav-controls">
+    <button class="nav-btn" onclick="changeSlide(-1)" aria-label="Anterior">&#8249;</button>
+    <div class="slide-dots" id="dots"></div>
+    <button class="nav-btn" onclick="changeSlide(1)" aria-label="Siguiente">&#8250;</button>
+    <span class="slide-counter" id="counter">1 / 2</span>
+  </div>
 
-<!-- Footer Requerido -->
-<div class="fixed bottom-6 left-6 z-[100] text-[0.85rem] text-[#475b74] bg-white/80 backdrop-blur-md px-[22px] py-[10px] rounded-[40px] border border-[rgba(16,35,60,0.08)] shadow-[0_12px_30px_rgba(15,40,80,0.08)] hidden md:block">
-  Esta carta de presentacion ha sido creada por Jose Carlos Martin
-</div>
-<div class="fixed top-0 left-0 right-0 text-center z-[100] text-[0.75rem] text-[#475b74] bg-white/90 backdrop-blur-md py-2 md:hidden border-b border-[rgba(16,35,60,0.08)]">
-  Esta carta de presentacion ha sido creada por Jose Carlos Martin
-</div>
-
-<!-- Navigation Controls -->
-<div class="nav-controls">
-  <button class="nav-btn" onclick="changeSlide(-1)" aria-label="Anterior">&#8249;</button>
-  <div class="slide-dots" id="dots"></div>
-  <button class="nav-btn" onclick="changeSlide(1)" aria-label="Siguiente">&#8250;</button>
-  <span class="slide-counter" id="counter">1 / 2</span>
-</div>
-
-<!-- Custom JS -->
-<script src="js/main.js"></script>
+  <!-- Custom JS -->
+  <script src="js/main.js"></script>
 </body>
+
 </html>
