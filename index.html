@@ -50,8 +50,8 @@
         <p class="reveal text-[clamp(1rem,1.5vw,1.15rem)] text-text-secondary mt-3 max-w-[42rem] mx-auto">Aplicación web para ayudar al contribuyente a entender qué licencias necesita y cómo seguir el trámite oficial.</p>
       </div>
       
-      <!-- Grid de Flip Cards para diapositiva 1 -->
-      <div class="grid grid-cols-4 gap-5 mt-4 max-w-[1200px] mx-auto w-full" style="height: 340px;">
+      <!-- Grid de Flip Cards para Slide 1 -->
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5 mt-4 max-w-[1200px] mx-auto w-full lg:h-[340px]">
         <!-- Card 1: Motivo -->
         <div class="reveal flip-card" onclick="this.classList.toggle('flipped')">
           <div class="flip-card-inner">
@@ -149,7 +149,7 @@
       </div>
       
       <!-- Grid de Flip Cards para Slide 2 -->
-      <div class="grid grid-cols-3 gap-5 mt-4 max-w-[1000px] mx-auto w-full" style="height: 380px;">
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5 mt-4 max-w-[1000px] mx-auto w-full lg:h-[380px]">
         
         <!-- Card 1: Angular & Spring -->
         <div class="reveal flip-card" onclick="this.classList.toggle('flipped')">
@@ -233,8 +233,11 @@
 </div>
 
 <!-- Footer Requerido -->
-<div style="position:fixed; bottom: 24px; left: 24px; z-index:100; font-size: 0.85rem; color: #475b74; background: rgba(255,255,255,0.76); backdrop-filter: blur(12px); padding: 10px 22px; border-radius: 40px; border: 1px solid rgba(16,35,60,0.08); box-shadow: 0 12px 30px rgba(15,40,80,0.08);">
-  Esta carta de presentacion ha sido creada por Jose Carlos Martin.
+<div class="fixed bottom-6 left-6 z-[100] text-[0.85rem] text-[#475b74] bg-white/80 backdrop-blur-md px-[22px] py-[10px] rounded-[40px] border border-[rgba(16,35,60,0.08)] shadow-[0_12px_30px_rgba(15,40,80,0.08)] hidden md:block">
+  Esta carta de presentacion ha sido creada por Jose Carlos Martin
+</div>
+<div class="fixed top-0 left-0 right-0 text-center z-[100] text-[0.75rem] text-[#475b74] bg-white/90 backdrop-blur-md py-2 md:hidden border-b border-[rgba(16,35,60,0.08)]">
+  Esta carta de presentacion ha sido creada por Jose Carlos Martin
 </div>
 
 <!-- Navigation Controls -->
